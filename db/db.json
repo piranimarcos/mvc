@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nombre": "100 Años de Soledad",
+    "autor": "Gabriel Garcia Marquez"
+  },
+  {
+    "id": 2,
+    "nombre": "Operación Masacre",
+    "autor": "Rodolfo Walsh"
+  },
+  {
+    "id": 3,
+    "nombre": "Dracula",
+    "autor": "Bram Stoker"
+  },
+  {
+    "id": 4,
+    "nombre": "Cementerio de animales",
+    "autor": "Stephen king"
+  }
+]

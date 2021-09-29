@@ -1,0 +1,29 @@
+<p align="center">
+    <img src="https://www.digitalhouse.com/ar/logo-dh-blanco.png" width="300">
+</p>
+<h1 align="center">Libros </h1>
+
+<form action="/books" method="post">
+    <input type="text" name="nombre" placeholder="ingrese nombre" />
+    <input type="text" name="autor" placeholder="ingrese autor" />
+    <input type="submit" value="Crear"/>
+</form>
+
+{{#each books}}
+
+<div class="card">
+    <img src="https://png.pngtree.com/element_our/20190528/ourlarge/pngtree-three-books-a-stack-of-books-png-free-image_1181753.jpg"
+        alt="Avatar" style="width:100%">
+    <div class="container">
+        <h4><b>{{this.nombre}}</b></h4>
+        <p>{{this.autor}}</p>
+
+        <form action="/books/delete" method="post">
+            <input hidden="" type="text" name="id" value="{{this._id}}"/>
+            <input type="submit" value="Eliminar" />
+        </form>
+    </div>
+</div>
+{{else}}
+<p>Sin libros</p>
+{{/each}}
