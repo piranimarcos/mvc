@@ -1,12 +1,15 @@
 const mongoose = require("mongoose");
 
+const conection =
+  "mongodb+srv://user_node:tEd8UmWsUSvUmqJ4@cluster.yaevp.mongodb.net/test";
+
 const dbConection = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_CON, {
+    await mongoose.connect(conection, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-    //   useCreateIndex: true,
-    //   useFindAndModify: false,
+      //   useCreateIndex: true,
+      //   useFindAndModify: false,
     });
 
     console.log("DB online");

@@ -47,7 +47,7 @@
 
 
 
-<form action="/books" method="post">
+<form action="/" method="post">
     <input type="text" name="nombre" placeholder="ingrese nombre" />
     <input type="text" name="autor" placeholder="ingrese autor" />
     <input type="submit" value="Crear"/>
@@ -63,7 +63,7 @@
 
 
 
-<form action="/books/delete" method="post">
+<form action="/delete" method="post">
     <input hidden="" type="text" name="id" value="{{this._id}}"/>
     <input type="submit" value="Eliminar" />
 </form>
