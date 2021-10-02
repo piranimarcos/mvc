@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+
+    <style>
+        body {
+            background-color: #cb1e40;
+            color: beige;
+        }
+
+        .card {
+            display: inline-block;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            width: 200px;
+            margin: 20px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            padding: 2px 16px 20px; 
+        }
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p align="center">
+        <img src="https://www.digitalhouse.com/ar/logo-dh-blanco.png" width="300">
+    </p>
+    <h1 align="center">Libros </h1>
+
+    <form action="/" method="post">
+        <input type="text" name="nombre" placeholder="ingrese nombre" />
+        <input type="text" name="autor" placeholder="ingrese autor" />
+        <input type="submit" value="Crear"/>
+    </form>
+
+    {{#each books}}
+
+    <div class="card">
+        <img src="https://png.pngtree.com/element_our/20190528/ourlarge/pngtree-three-books-a-stack-of-books-png-free-image_1181753.jpg"
+            alt="Avatar" style="width:100%">
+        <div class="container">
+            <h4><b>{{this.nombre}}</b></h4>
+            <p>{{this.autor}}</p>
+
+            <form action="/delete" method="post">
+                <input hidden="" type="text" name="id" value="{{this._id}}"/>
+                <input type="submit" value="Eliminar" />
+            </form>
+        </div>
+    </div>
+    {{else}}
+    <p>Sin libros</p>
+    {{/each}}
+
+</body>
+
+</html>
