@@ -1,15 +1,12 @@
 const mongoose = require("mongoose");
 
-const conection =
-  "mongodb+srv://user_node:tEd8UmWsUSvUmqJ4@cluster.yaevp.mongodb.net/test";
+require("dotenv").config({ path: './db/.env' });
 
 const dbConection = async () => {
   try {
-    await mongoose.connect(conection, {
+    await mongoose.connect(process.env.MONGODB_CON, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      //   useCreateIndex: true,
-      //   useFindAndModify: false,
     });
 
     console.log("DB online");
